@@ -9,13 +9,13 @@ function numbersOnlynew(arr){ //for new array
     return newArray;
 }
 function numbersOnly(arr){ //for removal from given array
-    var newArray = [];
-    for (var i=0; i<arr.length; i++){
-        if (typeof arr[i] === "number"){
-            newArray.push(arr[i]);
+    for (var i = 0; i < arr.length; i++) {
+        while(typeof(arr[i]) != "number"){
+            for (var x = i; x < arr.length-1; x++) {
+                arr[x] = arr[x+1];
+            }
+            arr.pop()
         }
     }
-    arr = newArray;
     console.log(arr);
-    return arr; //still have to return array as it's a function call and is local
 }
